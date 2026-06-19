@@ -1,0 +1,138 @@
+[
+  { "id": "chicken_breast", "name": "Chicken Breast", "category": "protein" },
+  { "id": "chicken_thigh", "name": "Chicken Thigh", "category": "protein" },
+  { "id": "chicken_wing", "name": "Chicken Wing", "category": "protein" },
+  { "id": "whole_chicken", "name": "Whole Chicken", "category": "protein" },
+  { "id": "ground_chicken", "name": "Ground Chicken", "category": "protein" },
+
+  { "id": "beef", "name": "Beef", "category": "protein" },
+  { "id": "ground_beef", "name": "Ground Beef", "category": "protein" },
+  { "id": "beef_shank", "name": "Beef Shank", "category": "protein" },
+  { "id": "beef_ribs", "name": "Beef Ribs", "category": "protein" },
+  { "id": "beef_tenderloin", "name": "Beef Tenderloin", "category": "protein" },
+
+  { "id": "egg", "name": "Egg", "category": "protein" },
+  { "id": "quail_egg", "name": "Quail Egg", "category": "protein" },
+
+  { "id": "shrimp", "name": "Shrimp", "category": "protein" },
+  { "id": "squid", "name": "Squid", "category": "protein" },
+  { "id": "crab", "name": "Crab", "category": "protein" },
+
+  { "id": "tuna", "name": "Tuna", "category": "protein" },
+  { "id": "mackerel", "name": "Mackerel", "category": "protein" },
+  { "id": "catfish", "name": "Catfish", "category": "protein" },
+  { "id": "tilapia", "name": "Tilapia", "category": "protein" },
+
+  { "id": "tofu", "name": "Tofu", "category": "protein" },
+  { "id": "firm_tofu", "name": "Firm Tofu", "category": "protein" },
+  { "id": "tempeh", "name": "Tempeh", "category": "protein" },
+
+  { "id": "broccoli", "name": "Broccoli", "category": "vegetable" },
+  { "id": "cauliflower", "name": "Cauliflower", "category": "vegetable" },
+  { "id": "cabbage", "name": "Cabbage", "category": "vegetable" },
+  { "id": "carrot", "name": "Carrot", "category": "vegetable" },
+  { "id": "green_beans", "name": "Green Beans", "category": "vegetable" },
+  { "id": "corn", "name": "Corn", "category": "vegetable" },
+  { "id": "baby_corn", "name": "Baby Corn", "category": "vegetable" },
+
+  { "id": "spinach", "name": "Spinach", "category": "vegetable" },
+  { "id": "water_spinach", "name": "Water Spinach", "category": "vegetable" },
+  { "id": "mustard_greens", "name": "Mustard Greens", "category": "vegetable" },
+  { "id": "bok_choy", "name": "Bok Choy", "category": "vegetable" },
+  { "id": "napa_cabbage", "name": "Napa Cabbage", "category": "vegetable" },
+
+  { "id": "lettuce", "name": "Lettuce", "category": "vegetable" },
+  { "id": "romaine_lettuce", "name": "Romaine Lettuce", "category": "vegetable" },
+
+  { "id": "tomato", "name": "Tomato", "category": "vegetable" },
+  { "id": "cherry_tomato", "name": "Cherry Tomato", "category": "vegetable" },
+  { "id": "cucumber", "name": "Cucumber", "category": "vegetable" },
+
+  { "id": "eggplant", "name": "Eggplant", "category": "vegetable" },
+  { "id": "chayote", "name": "Chayote", "category": "vegetable" },
+  { "id": "pumpkin", "name": "Pumpkin", "category": "vegetable" },
+
+  { "id": "oyster_mushroom", "name": "Oyster Mushroom", "category": "vegetable" },
+  { "id": "button_mushroom", "name": "Button Mushroom", "category": "vegetable" },
+  { "id": "enoki_mushroom", "name": "Enoki Mushroom", "category": "vegetable" },
+  { "id": "shiitake_mushroom", "name": "Shiitake Mushroom", "category": "vegetable" },
+
+  { "id": "onion", "name": "Onion", "category": "spice" },
+  { "id": "shallot", "name": "Shallot", "category": "spice" },
+  { "id": "garlic", "name": "Garlic", "category": "spice" },
+
+  { "id": "red_chili", "name": "Red Chili", "category": "spice" },
+  { "id": "green_chili", "name": "Green Chili", "category": "spice" },
+  { "id": "birds_eye_chili", "name": "Bird's Eye Chili", "category": "spice" },
+
+  { "id": "ginger", "name": "Ginger", "category": "spice" },
+  { "id": "turmeric", "name": "Turmeric", "category": "spice" },
+  { "id": "galangal", "name": "Galangal", "category": "spice" },
+  { "id": "kaffir_lime_leaf", "name": "Kaffir Lime Leaf", "category": "spice" },
+  { "id": "bay_leaf", "name": "Bay Leaf", "category": "spice" },
+  { "id": "lemongrass", "name": "Lemongrass", "category": "spice" },
+
+  { "id": "candlenut", "name": "Candlenut", "category": "spice" },
+  { "id": "coriander", "name": "Coriander", "category": "spice" },
+  { "id": "cumin", "name": "Cumin", "category": "spice" },
+
+  { "id": "salt", "name": "Salt", "category": "seasoning" },
+  { "id": "pepper", "name": "Black Pepper", "category": "seasoning" },
+  { "id": "white_pepper", "name": "White Pepper", "category": "seasoning" },
+  { "id": "sugar", "name": "Sugar", "category": "seasoning" },
+  { "id": "brown_sugar", "name": "Brown Sugar", "category": "seasoning" },
+
+  { "id": "sweet_soy_sauce", "name": "Sweet Soy Sauce", "category": "sauce" },
+  { "id": "soy_sauce", "name": "Soy Sauce", "category": "sauce" },
+  { "id": "oyster_sauce", "name": "Oyster Sauce", "category": "sauce" },
+  { "id": "fish_sauce", "name": "Fish Sauce", "category": "sauce" },
+
+  { "id": "chili_sauce", "name": "Chili Sauce", "category": "sauce" },
+  { "id": "tomato_sauce", "name": "Tomato Sauce", "category": "sauce" },
+  { "id": "mayonnaise", "name": "Mayonnaise", "category": "sauce" },
+  { "id": "mustard", "name": "Mustard", "category": "sauce" },
+
+  { "id": "rice", "name": "Rice", "category": "pantry" },
+  { "id": "jasmine_rice", "name": "Jasmine Rice", "category": "pantry" },
+  { "id": "brown_rice", "name": "Brown Rice", "category": "pantry" },
+
+  { "id": "instant_noodles", "name": "Instant Noodles", "category": "pantry" },
+  { "id": "egg_noodles", "name": "Egg Noodles", "category": "pantry" },
+  { "id": "rice_noodles", "name": "Rice Noodles", "category": "pantry" },
+  { "id": "glass_noodles", "name": "Glass Noodles", "category": "pantry" },
+
+  { "id": "wheat_flour", "name": "Wheat Flour", "category": "pantry" },
+  { "id": "cornstarch", "name": "Cornstarch", "category": "pantry" },
+  { "id": "tapioca_flour", "name": "Tapioca Flour", "category": "pantry" },
+
+  { "id": "cooking_oil", "name": "Cooking Oil", "category": "pantry" },
+  { "id": "sesame_oil", "name": "Sesame Oil", "category": "pantry" },
+  { "id": "olive_oil", "name": "Olive Oil", "category": "pantry" },
+
+  { "id": "milk", "name": "Milk", "category": "dairy" },
+  { "id": "evaporated_milk", "name": "Evaporated Milk", "category": "dairy" },
+  { "id": "condensed_milk", "name": "Condensed Milk", "category": "dairy" },
+
+  { "id": "butter", "name": "Butter", "category": "dairy" },
+  { "id": "margarine", "name": "Margarine", "category": "dairy" },
+
+  { "id": "cheddar_cheese", "name": "Cheddar Cheese", "category": "dairy" },
+  { "id": "mozzarella_cheese", "name": "Mozzarella Cheese", "category": "dairy" },
+  { "id": "parmesan_cheese", "name": "Parmesan Cheese", "category": "dairy" },
+
+  { "id": "banana", "name": "Banana", "category": "fruit" },
+  { "id": "apple", "name": "Apple", "category": "fruit" },
+  { "id": "orange", "name": "Orange", "category": "fruit" },
+  { "id": "mango", "name": "Mango", "category": "fruit" },
+  { "id": "avocado", "name": "Avocado", "category": "fruit" },
+  { "id": "pineapple", "name": "Pineapple", "category": "fruit" },
+  { "id": "watermelon", "name": "Watermelon", "category": "fruit" },
+
+  { "id": "sausage", "name": "Sausage", "category": "frozen" },
+  { "id": "meatball", "name": "Meatball", "category": "frozen" },
+  { "id": "chicken_nugget", "name": "Chicken Nugget", "category": "frozen" },
+  { "id": "fish_ball", "name": "Fish Ball", "category": "frozen" },
+  { "id": "crab_stick", "name": "Crab Stick", "category": "frozen" },
+  { "id": "dumpling", "name": "Dumpling", "category": "frozen" },
+  { "id": "gyoza", "name": "Gyoza", "category": "frozen" }
+]
