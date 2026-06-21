@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct IngredientMaster: Codable, Identifiable {
+    let id: String
+    let name: String
+    let category: String
+    let emoji: String
+}

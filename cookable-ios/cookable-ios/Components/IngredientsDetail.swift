@@ -9,79 +9,57 @@ import SwiftUI
 
 struct IngredientsDetail: View {
 
-    let ingredients: [RecipeIngredient]
+    let recipe: Recipe
+    let allIngredients: [Ingredient]
 
     var body: some View {
 
         VStack(alignment: .leading, spacing: 20) {
 
             HStack {
-
                 Text("Ingredients")
-                    .font(.title3)
-                    .fontWeight(.semibold)
+                    .font(.title3.bold())
 
                 Spacer()
-
-                Image(systemName: "chevron.up")
-                    .font(.headline)
             }
+//            Text("Loaded: \(allIngredients.count)")
+            ForEach(recipe.ingredients) { ingredient in
 
-            VStack(alignment: .leading, spacing: 24) {
+                HStack(spacing: 12) {
 
-                ForEach(ingredients) { ingredient in
+                    Text(
+                        allIngredients.first {
+                            $0.id == ingredient.id || $0.name.lowercased() == ingredient.name.lowercased()
+                        }?.emoji ?? "🍽️"
+                    )
+                    .font(.title2)
 
-                    HStack(spacing: 16) {
+                    Text(ingredient.name)
+                        .font(.body)
 
-                        Text(ingredient.emoji)
-                            .font(.title2)
+                    Spacer(minLength: 12)
 
-                        Text(ingredient.name)
-                            .font(.title3)
+                    if let amount = ingredient.amount {
+                        Text(amount)
+                            .foregroundStyle(.secondary)
                     }
                 }
             }
+            Spacer()
+                .frame(height: 2)
+            
+            Divider()
+                .frame(height: 2)
+                    .background(Color.black.opacity(0.15))
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 24)
-    }
-}
-
-
-extension IngredientsDetail {
-
-    var emoji: String {
-
-        switch name.lowercased() {
-
-        case "egg":
-            return "🥚"
-
-        case "broccoli":
-            return "🥦"
-
-        case "tomato":
-            return "🍅"
-
-        case "chicken":
-            return "🍗"
-
-        case "beef":
-            return "🥩"
-
-        case "shrimp":
-            return "🦐"
-
-        case "tofu":
-            return "🧈"
-
-        default:
-            return "🍴"
-        }
     }
 }
 
 #Preview {
     IngredientsDetail(
-        ingredients: recipe.ingredients
+        recipe: .mock,
+        allIngredients: IngredientRepository.loadIngredients()
     )
 }

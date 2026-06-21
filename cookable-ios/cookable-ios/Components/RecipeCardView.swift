@@ -70,17 +70,17 @@ extension Recipe {
         imageName: "eggtomatobroccoli",
         ingredients: [
             RecipeIngredient(
-                id: "1",
+                id: "egg",
                 name: "Egg",
                 amount: "2"
             ),
             RecipeIngredient(
-                id: "2",
+                id: "broccoli",
                 name: "Broccoli",
                 amount: "100g"
             ),
             RecipeIngredient(
-                id: "3",
+                id: "tomato",
                 name: "Tomato",
                 amount: "1"
             )

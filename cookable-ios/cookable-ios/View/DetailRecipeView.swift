@@ -10,6 +10,8 @@ import SwiftUI
 struct DetailRecipeView: View {
 
     let recipe: Recipe
+    private let allIngredients =
+        IngredientRepository.loadIngredients()
 
     var body: some View {
 
@@ -17,7 +19,10 @@ struct DetailRecipeView: View {
 
             RecipeHeaderImage(recipe: recipe)
 
-            // content lainnya
+            IngredientsDetail(
+                recipe: recipe,
+                allIngredients: allIngredients
+            )
         }
         .ignoresSafeArea(edges: .top)
     }

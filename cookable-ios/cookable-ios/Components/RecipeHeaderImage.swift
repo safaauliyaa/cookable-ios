@@ -71,7 +71,8 @@ struct RecipeHeaderImage: View {
             
             Divider()
                 .frame(height: 2)
-                    .background(Color.black.opacity(0.15))
+                .background(Color.black.opacity(0.15))
+                .padding(.bottom, 12)
             
         }
         .frame(maxWidth: .infinity, alignment: .leading)
