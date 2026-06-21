@@ -15,14 +15,21 @@ struct DetailRecipeView: View {
 
     var body: some View {
 
-        VStack {
+        ScrollView {
 
-            RecipeHeaderImage(recipe: recipe)
+            VStack(spacing: 24) {
 
-            IngredientsDetail(
-                recipe: recipe,
-                allIngredients: allIngredients
-            )
+                RecipeHeaderImage(recipe: recipe)
+
+                IngredientsDetail(
+                    recipe: recipe,
+                    allIngredients: allIngredients
+                )
+
+                InstructionsDetail(
+                    recipe: recipe
+                )
+            }
         }
         .ignoresSafeArea(edges: .top)
     }
