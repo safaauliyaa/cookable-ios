@@ -9,6 +9,8 @@ import SwiftUI
 
 struct IngredientsDetail: View {
 
+    @State private var isExpanded = false
+    
     let recipe: Recipe
     let allIngredients: [Ingredient]
 
@@ -16,32 +18,52 @@ struct IngredientsDetail: View {
 
         VStack(alignment: .leading, spacing: 20) {
 
-            HStack {
-                Text("Ingredients")
-                    .font(.title3.bold())
+            Button {
+                withAnimation(.easeInOut) {
+                    isExpanded.toggle()
+                }
+            } label: {
 
-                Spacer()
+                HStack {
+
+                    Text("Ingredients")
+                        .font(.title3.bold())
+
+                    Spacer()
+
+                    Image(systemName: "chevron.right")
+                        .font(.caption.bold())
+                        .rotationEffect(
+                            .degrees(isExpanded ? 90 : 0)
+                        )
+                        .foregroundStyle(.secondary)
+                }
             }
+            .buttonStyle(.plain)
 //            Text("Loaded: \(allIngredients.count)")
-            ForEach(recipe.ingredients) { ingredient in
+            if isExpanded {
 
-                HStack(spacing: 12) {
+                ForEach(recipe.ingredients) { ingredient in
 
-                    Text(
-                        allIngredients.first {
-                            $0.id == ingredient.id || $0.name.lowercased() == ingredient.name.lowercased()
-                        }?.emoji ?? "🍽️"
-                    )
-                    .font(.title2)
+                    HStack(spacing: 12) {
 
-                    Text(ingredient.name)
-                        .font(.body)
+                        Text(
+                            allIngredients.first {
+                                $0.id == ingredient.id ||
+                                $0.name.lowercased() == ingredient.name.lowercased()
+                            }?.emoji ?? "🍽️"
+                        )
+                        .font(.title2)
 
-                    Spacer(minLength: 12)
+                        Text(ingredient.name)
+                            .font(.body)
 
-                    if let amount = ingredient.amount {
-                        Text(amount)
-                            .foregroundStyle(.secondary)
+                        Spacer(minLength: 12)
+
+                        if let amount = ingredient.amount {
+                            Text(amount)
+                                .foregroundStyle(.secondary)
+                        }
                     }
                 }
             }
