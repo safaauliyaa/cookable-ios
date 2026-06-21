@@ -9,29 +9,65 @@ import SwiftUI
 
 struct DetailRecipeView: View {
 
+    @Environment(\.dismiss) private var dismiss
+
     let recipe: Recipe
+
     private let allIngredients =
         IngredientRepository.loadIngredients()
 
     var body: some View {
 
-        ScrollView {
+        ZStack(alignment: .topLeading) {
 
-            VStack(spacing: 24) {
+            ScrollView {
 
-                RecipeHeaderImage(recipe: recipe)
+                VStack(spacing: 24) {
 
-                IngredientsDetail(
-                    recipe: recipe,
-                    allIngredients: allIngredients
-                )
+                    RecipeHeaderImage(recipe: recipe)
+                        .padding(.top, -60)
 
-                InstructionsDetail(
-                    recipe: recipe
+                    RecipeInfo(recipe: recipe)
+
+                    IngredientsDetail(
+                        recipe: recipe,
+                        allIngredients: allIngredients
+                    )
+
+                    InstructionsDetail(
+                        recipe: recipe
+                    )
+                }
+            }
+            .overlay(alignment: .top) {
+
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+                    .frame(height: 80)
+                    .ignoresSafeArea(edges: .top)
+            }
+            .overlay(alignment: .topLeading) {
+
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(.black)
+                        .frame(width: 48, height: 48)
+                        .background(.ultraThinMaterial)
+                        .clipShape(Circle())
+                }
+                .padding(.top, 24)
+                .padding(.leading, 24)
+                .shadow(
+                    color: .black.opacity(0.08),
+                    radius: 8,
+                    y: 4
                 )
             }
         }
-        .ignoresSafeArea(edges: .top)
+//        .ignoresSafeArea()
     }
 }
 
