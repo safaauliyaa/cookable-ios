@@ -1,0 +1,31 @@
+[
+  {
+    "id": "omelette-broccoli-tomato",
+    "title": "Omelette Broccoli Tomato",
+    "description": "A simple omelette packed with vegetables.",
+    "imageName": "omelette",
+    "ingredients": [
+      {
+        "id": "egg",
+        "name": "Egg",
+        "amount": "2 pcs"
+      },
+      {
+        "id": "broccoli",
+        "name": "Broccoli",
+        "amount": "50 g"
+      },
+      {
+        "id": "tomato",
+        "name": "Tomato",
+        "amount": "1 pc"
+      }
+    ],
+    "instructions": [
+      "Wash the broccoli.",
+      "Crack the eggs.",
+      "Mix all ingredients.",
+      "Cook on medium heat."
+    ]
+  }
+]
