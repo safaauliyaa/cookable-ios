@@ -21,33 +21,77 @@ struct RecipeCardView: View {
                 .frame(height: 240)
                 .clipped()
 
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 12) {
 
                 Text(recipe.title)
-                    .font(.title3.bold())
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.primary)
 
-                HStack {
+                HStack(spacing: 8) {
+                        
+                    ForEach(recipe.ingredients.prefix(3)) { ingredient in
 
-                    ForEach(recipe.ingredients.prefix(3), id: \.self) {
-                        ingredient in
-
-                        Text(ingredient)
-                            .font(.caption)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
+                        Text(ingredient.name)
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.primary)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
                             .overlay {
                                 Capsule()
-                                    .stroke(.black.opacity(0.4))
+                                    .stroke(Color.primary, lineWidth: 1.2)
                             }
                     }
                 }
             }
-            .padding()
+            .padding(.vertical, 16)
+            .padding(.horizontal, 20)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .overlay {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(.white.opacity(0.15), lineWidth: 1)
+            }
+            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 5)
+            .padding([.horizontal, .bottom], 12)
         }
         .clipShape(
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 24)
         )
     }
+}
+
+extension Recipe {
+
+    static let mock = Recipe(
+        id: "1",
+        title: "Broccoli Omelette",
+        description: "Simple omelette with broccoli.",
+        imageName: "eggtomatobroccoli",
+        ingredients: [
+            RecipeIngredient(
+                id: "1",
+                name: "Egg",
+                amount: "2"
+            ),
+            RecipeIngredient(
+                id: "2",
+                name: "Broccoli",
+                amount: "100g"
+            ),
+            RecipeIngredient(
+                id: "3",
+                name: "Tomato",
+                amount: "1"
+            )
+        ],
+        instructions: [
+            "Beat eggs",
+            "Cook"
+        ]
+    )
+}
+
+#Preview {
+    RecipeCardView(recipe: .mock)
 }

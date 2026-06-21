@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipe: Codable, Identifiable {
+struct Recipe: Codable, Hashable, Identifiable {
 
     let id: String
 
@@ -21,7 +21,7 @@ struct Recipe: Codable, Identifiable {
     let instructions: [String]
 }
 
-struct RecipeIngredient: Codable, Identifiable {
+struct RecipeIngredient: Codable, Hashable, Identifiable {
 
     let id: String
 
