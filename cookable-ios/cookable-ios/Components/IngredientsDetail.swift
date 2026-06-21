@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IngredientsDetail: View {
 
-    @State private var isExpanded = false
+    @State private var isExpanded = true
     
     let recipe: Recipe
     let allIngredients: [Ingredient]
@@ -66,9 +66,10 @@ struct IngredientsDetail: View {
                         }
                     }
                 }
+                .padding(.bottom, 4)
             }
-            Spacer()
-                .frame(height: 2)
+//            Spacer()
+//                .frame(height: 2)
             
             Divider()
                 .frame(height: 2)

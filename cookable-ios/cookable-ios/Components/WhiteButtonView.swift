@@ -27,7 +27,8 @@ struct WhiteButtonView: View {
 //            )
             .shadow(color: Color.black.opacity(0.15), radius: 10, x: 0, y: 5)
         }
-//        .glassEffect()
+        .glassEffect()
+        .tint(.cookableGreen)
         .padding(.horizontal)
 //        .border(.red)
     }

@@ -19,13 +19,13 @@ struct CookableView: View {
                 Text(String(char))
                     .foregroundColor(
                         displayedText.prefix(displayedText.distance(from: displayedText.startIndex, to: displayedText.firstIndex(of: char) ?? displayedText.startIndex) + 1).count <= 4
-                        ? Color(hex: "1A8917")
-                        : Color(hex: "1A1A1A")
+                        ? Color(.cookableGreen)
+                        : Color(.cookableBlack)
                     )
             }
 
             Rectangle()
-                .fill(Color(hex: "1A8917"))
+                .fill(Color(.cookableGreen))
                 .frame(width: 2, height: 60)
                 .opacity(showCursor ? 1 : 0)
         }

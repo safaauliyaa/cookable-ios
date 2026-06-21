@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    @Environment(\.dismiss) private var dismiss
-    @State private var recipes: [Recipe] = []
+    @EnvironmentObject var appState: AppState
     
     // Optional parameter to inject recipes for previews
     var initialRecipes: [Recipe]? = nil
+
+    private var recipesToDisplay: [Recipe] {
+        if let initial = initialRecipes {
+            return initial
+        }
+        return appState.recipeResults
+    }
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -28,8 +34,11 @@ struct RecipeListView: View {
                         .padding(.bottom, 24)
 
                     LazyVStack(spacing: 20) {
-                        ForEach(recipes) { recipe in
-                            RecipeCardView(recipe: recipe)
+                        ForEach(recipesToDisplay) { recipe in
+                            NavigationLink(value: AppRoute.recipeDetail(recipe)) {
+                                RecipeCardView(recipe: recipe)
+                            }
+                            .buttonStyle(.plain)
                         }
                     }
                 }
@@ -40,7 +49,7 @@ struct RecipeListView: View {
             VStack(spacing: 0) {
                 HStack {
                     Button {
-                        dismiss()
+                        appState.path = [.home]
                     } label: {
                         Image(systemName: "chevron.left")
                             .font(.system(size: 18, weight: .semibold))
@@ -60,13 +69,6 @@ struct RecipeListView: View {
                 )
             }
         }
-        .onAppear {
-            if let initial = initialRecipes {
-                recipes = initial
-            } else {
-                recipes = RecipeRepository.loadRecipes()
-            }
-        }
         .navigationBarHidden(true)
     }
 }
@@ -84,4 +86,5 @@ struct RecipeListView: View {
         )
     }
     return RecipeListView(initialRecipes: mockRecipes)
+        .environmentObject(AppState())
 }

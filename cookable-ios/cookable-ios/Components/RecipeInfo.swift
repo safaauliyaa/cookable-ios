@@ -24,8 +24,10 @@ struct RecipeInfo: View {
                 .foregroundStyle(.secondary)
 
             Divider()
-                .overlay(.black.opacity(0.15))
+                .frame(height: 2)
+                    .background(Color.black.opacity(0.15))
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 24)
     }
 }

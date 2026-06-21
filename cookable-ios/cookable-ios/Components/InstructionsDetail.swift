@@ -11,15 +11,14 @@ struct InstructionsDetail: View {
 
     let recipe: Recipe
 
-    @State private var isExpanded = false
+    @State private var isExpanded = true
 
     var body: some View {
 
         VStack(alignment: .leading, spacing: 20) {
 
             Button {
-
-                withAnimation(.spring()) {
+                withAnimation(.easeInOut) {
                     isExpanded.toggle()
                 }
 
@@ -43,9 +42,7 @@ struct InstructionsDetail: View {
             .buttonStyle(.plain)
 
             if isExpanded {
-
-                VStack(alignment: .leading, spacing: 20) {
-
+                VStack (alignment: .leading, spacing: 20){
                     ForEach(
                         Array(recipe.instructions.enumerated()),
                         id: \.offset
@@ -65,13 +62,10 @@ struct InstructionsDetail: View {
 
                             Spacer()
                         }
-                    }
                 }
-                .transition(
-                    .opacity.combined(
-                        with: .move(edge: .top)
-                    )
-                )
+                
+                }
+                .padding(.bottom, 4)
             }
 
             Divider()

@@ -42,6 +42,8 @@ struct WaitforRecipeView: View {
                 .repeatForever(autoreverses: true),
             value: animate
         )
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
         .onAppear {
             animate = true
         }

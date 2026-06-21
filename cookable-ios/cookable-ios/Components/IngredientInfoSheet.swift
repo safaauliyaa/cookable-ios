@@ -10,7 +10,7 @@ import SwiftUI
 struct IngredientInfoSheet : View {
 
     @Environment(\.dismiss) private var dismiss
-    @Binding var selectedIngredients: [Ingredient]
+    @EnvironmentObject var appState: AppState
 
     var body: some View {
 
@@ -20,7 +20,7 @@ struct IngredientInfoSheet : View {
 
                 List {
 
-                    ForEach(selectedIngredients) { ingredient in
+                    ForEach(appState.currentIngredients) { ingredient in
 
                         Text(ingredient.name)
                             .font(.body)
@@ -31,9 +31,7 @@ struct IngredientInfoSheet : View {
                                     role: .destructive
                                 ) {
 
-                                    selectedIngredients.removeAll {
-                                        $0.id == ingredient.id
-                                    }
+                                    appState.removeIngredient(ingredient)
 
                                 } label: {
 
@@ -50,25 +48,23 @@ struct IngredientInfoSheet : View {
                 Spacer()
 
                 Button {
-
-                    print("Continue")
-
+                    dismiss()
+                    appState.startRecipeSearch()
                 } label: {
 
-                    Text("Continue")
+                    Text("Find Recipes")
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
-                        .background(
-                            Color(
-                                red: 26/255,
-                                green: 137/255,
-                                blue: 23/255
-                            )
+                        .glassEffect(
+                            .regular.tint(.cookableGreen).interactive(),
+                            in: Capsule()
                         )
-                        .clipShape(Capsule())
                 }
+                .buttonStyle(.plain)
+                .disabled(appState.currentIngredients.isEmpty)
+                .opacity(appState.currentIngredients.isEmpty ? 0.5 : 1)
                 .padding(.horizontal, 24)
                 .padding(.bottom, 24)
             }
@@ -83,6 +79,7 @@ struct IngredientInfoSheet : View {
                         dismiss()
                     } label: {
                         Image(systemName: "xmark")
+                            .foregroundColor(.black)
                     }
                 }
             }
@@ -90,9 +87,7 @@ struct IngredientInfoSheet : View {
     }
 }
 
-
 #Preview {
-    IngredientInfoSheet(
-        selectedIngredients: .constant([])
-    )
+    IngredientInfoSheet()
+        .environmentObject(AppState())
 }

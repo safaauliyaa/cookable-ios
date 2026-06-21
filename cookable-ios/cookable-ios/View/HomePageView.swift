@@ -8,34 +8,25 @@
 import SwiftUI
 import Foundation
 
-struct Ingredient: Codable, Identifiable, Hashable {
-    let id: String
-    let name: String
-    let category: String
-    let emoji: String
-}
-
 struct HomePageView: View {
+    @EnvironmentObject var appState: AppState
     @State private var showIngredientSheet = false
     @State private var searchText = ""
     @FocusState private var isSearchFocused: Bool
     
-    @State private var selectedIngredients: [Ingredient] = []
     @State private var animateCarrot = false
     @Namespace private var ingredientAnimation
     @State private var flyingIngredient: Ingredient?
-
+    
     @State private var ingredients: [Ingredient] = []
     var filteredIngredients: [Ingredient] {
-
-            if searchText.isEmpty {
-                return Array(ingredients.prefix(20))
-            }
-
-            return ingredients.filter {
-                $0.name.localizedCaseInsensitiveContains(searchText)
-            }
+        if searchText.isEmpty {
+            return Array(ingredients.prefix(20))
         }
+        return ingredients.filter {
+            $0.name.localizedCaseInsensitiveContains(searchText)
+        }
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -49,24 +40,22 @@ struct HomePageView: View {
                     showIngredientSheet = true
                 } label: {
                     ZStack {
-
                         Image(systemName: "carrot.fill")
-                            .font(.title2)
+                            .font(.headline)
                             .foregroundStyle(.white)
                             .frame(width: 48, height: 48)
-                            .background(selectedIngredients.isEmpty
+                            .background(appState.currentIngredients.isEmpty
                                         ? Color.black
                                         : Color.cookableGreen)
                             .animation(
                                 .easeInOut(duration: 0.2),
-                                value: selectedIngredients.count
+                                value: appState.currentIngredients.count
                             )
                             .clipShape(Circle())
                             .scaleEffect(animateCarrot ? 1.2 : 1.0)
 
-                        if !selectedIngredients.isEmpty {
-
-                            Text("\(selectedIngredients.count)")
+                        if !appState.currentIngredients.isEmpty {
+                            Text("\(appState.currentIngredients.count)")
                                 .font(.caption2.bold())
                                 .foregroundStyle(.white)
                                 .frame(width: 18, height: 18)
@@ -78,10 +67,9 @@ struct HomePageView: View {
                     }
                     .animation(
                         .spring(),
-                        value: selectedIngredients.count
+                        value: appState.currentIngredients.count
                     )
                 }
-                
             }
             .padding(.horizontal, 24)
             .padding(.top, 24)
@@ -97,7 +85,6 @@ struct HomePageView: View {
                 .font(.system(size: 24, weight: .bold))
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 24)
-                
 
             VStack(spacing: 16) {
                 HStack {
@@ -120,26 +107,21 @@ struct HomePageView: View {
                         FlowLayout {
                             ForEach(filteredIngredients) { ingredient in
                                 Button {
-                                    if !selectedIngredients.contains(ingredient) {
-                                        if !selectedIngredients.contains(ingredient) {
+                                    if !appState.currentIngredients.contains(ingredient) {
+                                        appState.addIngredient(ingredient)
 
-                                            selectedIngredients.append(ingredient)
+                                        withAnimation(
+                                            .spring(
+                                                response: 0.3,
+                                                dampingFraction: 0.4
+                                            )
+                                        ) {
+                                            animateCarrot = true
+                                        }
 
-                                            withAnimation(
-                                                .spring(
-                                                    response: 0.3,
-                                                    dampingFraction: 0.4
-                                                )
-                                            ) {
-                                                animateCarrot = true
-                                            }
-
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-
-                                                withAnimation(.spring()) {
-                                                    animateCarrot = false
-                                                }
-
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                            withAnimation(.spring()) {
+                                                animateCarrot = false
                                             }
                                         }
                                     }
@@ -147,21 +129,21 @@ struct HomePageView: View {
                                     Text(ingredient.name)
                                         .font(.caption)
                                         .foregroundStyle(
-                                            selectedIngredients.contains(ingredient)
+                                            appState.currentIngredients.contains(ingredient)
                                                 ? Color.white
                                                 : Color.black
                                         )
                                         .padding(.horizontal, 16)
                                         .padding(.vertical, 8)
                                         .background(
-                                            selectedIngredients.contains(ingredient)
+                                            appState.currentIngredients.contains(ingredient)
                                                 ? Color.cookableGreen
                                                 : Color.white
                                         )
                                         .overlay {
                                             Capsule()
                                                 .stroke(
-                                                    selectedIngredients.contains(ingredient)
+                                                    appState.currentIngredients.contains(ingredient)
                                                         ? Color.cookableGreen
                                                         : Color.black.opacity(0.4)
                                                 )
@@ -182,19 +164,18 @@ struct HomePageView: View {
             }
         }
         .animation(.easeInOut, value: isSearchFocused)
+        .navigationBarHidden(true)
         .onAppear {
             ingredients = IngredientRepository.loadIngredients()
         }
         .sheet(isPresented: $showIngredientSheet) {
-            IngredientInfoSheet(
-                selectedIngredients: $selectedIngredients
-            )
+            IngredientInfoSheet()
                 .presentationDetents([.medium, .large])
         }
     }
 }
 
-
 #Preview {
     HomePageView()
+        .environmentObject(AppState())
 }
