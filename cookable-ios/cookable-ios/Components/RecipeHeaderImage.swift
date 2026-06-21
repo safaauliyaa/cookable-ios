@@ -55,6 +55,29 @@ struct RecipeHeaderImage: View {
 //                )
             }
         }
+        VStack(alignment: .leading, spacing: 12) {
+            Text(recipe.title)
+                .font(.title)
+                .bold()
+                .lineLimit(2)
+                .foregroundColor(.black)
+            Text(recipe.description)
+                .font(.caption)
+//                .bold()
+                .foregroundColor(.black)
+            
+            Spacer()
+                .frame(height: 2)
+            
+            Divider()
+                .frame(height: 2)
+                    .background(Color.black.opacity(0.15))
+            
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 24)
+        
+        
     }
 }
 
