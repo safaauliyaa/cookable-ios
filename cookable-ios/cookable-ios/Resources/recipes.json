@@ -32,7 +32,7 @@
     "id": "beef-corn-kuning-0",
     "title": "Kuning Beef with Corn",
     "description": "A simple and delicious Indonesian-inspired Beef dish cooked in turmeric yellow sauce with fresh Corn.",
-    "imageName": "beef",
+    "imageName": "beefcornkuning0",
     "ingredients": [
       {
         "id": "beef",
@@ -241,7 +241,7 @@
     "id": "chicken-long-bean-kuning-4",
     "title": "Kuning Chicken with Long Bean",
     "description": "A simple and delicious Indonesian-inspired Chicken dish cooked in turmeric yellow sauce with fresh Long Bean.",
-    "imageName": "chicken",
+    "imageName": "longbean",
     "ingredients": [
       {
         "id": "chicken",
@@ -297,7 +297,7 @@
     "id": "beef-long-bean-goreng-tepung-5",
     "title": "Goreng Tepung Beef with Long Bean",
     "description": "A simple and delicious Indonesian-inspired Beef dish cooked in crispy flour coating with fresh Long Bean.",
-    "imageName": "beef",
+    "imageName": "beef-longbean",
     "ingredients": [
       {
         "id": "beef",
@@ -399,7 +399,7 @@
     "id": "shrimp-corn-orek-7",
     "title": "Orek Shrimp with Corn",
     "description": "A simple and delicious Indonesian-inspired Shrimp dish cooked in sweet soy sauce stir-fry with fresh Corn.",
-    "imageName": "shrimp",
+    "imageName": "shrimp-corn",
     "ingredients": [
       {
         "id": "shrimp",
@@ -450,7 +450,7 @@
     "id": "tofu-bell-pepper-semur-8",
     "title": "Semur Tofu with Bell Pepper",
     "description": "A simple and delicious Indonesian-inspired Tofu dish cooked in sweet soy stew with fresh Bell Pepper.",
-    "imageName": "tofu",
+    "imageName": "tofu-pepper",
     "ingredients": [
       {
         "id": "tofu",
@@ -501,7 +501,7 @@
     "id": "egg-long-bean-semur-9",
     "title": "Semur Egg with Long Bean",
     "description": "A simple and delicious Indonesian-inspired Egg dish cooked in sweet soy stew with fresh Long Bean.",
-    "imageName": "egg",
+    "imageName": "egg-longbean",
     "ingredients": [
       {
         "id": "egg",
@@ -552,7 +552,7 @@
     "id": "mushroom-cucumber-penyet-10",
     "title": "Penyet Mushroom with Cucumber",
     "description": "A simple and delicious Indonesian-inspired Mushroom dish cooked in smashed with sambal with fresh Cucumber.",
-    "imageName": "mushroom",
+    "imageName": "mushroom-cucumber",
     "ingredients": [
       {
         "id": "mushroom",
@@ -603,7 +603,7 @@
     "id": "chicken-corn-asam-manis-11",
     "title": "Asam Manis Chicken with Corn",
     "description": "A simple and delicious Indonesian-inspired Chicken dish cooked in sweet and sour with fresh Corn.",
-    "imageName": "chicken",
+    "imageName": "chicken-corn",
     "ingredients": [
       {
         "id": "chicken",
@@ -654,7 +654,7 @@
     "id": "shrimp-bell-pepper-penyet-12",
     "title": "Penyet Shrimp with Bell Pepper",
     "description": "A simple and delicious Indonesian-inspired Shrimp dish cooked in smashed with sambal with fresh Bell Pepper.",
-    "imageName": "shrimp",
+    "imageName": "shrimp-pepper",
     "ingredients": [
       {
         "id": "shrimp",
@@ -705,7 +705,7 @@
     "id": "beef-spinach-asam-manis-13",
     "title": "Asam Manis Beef with Spinach",
     "description": "A simple and delicious Indonesian-inspired Beef dish cooked in sweet and sour with fresh Spinach.",
-    "imageName": "beef",
+    "imageName": "beef-spinach",
     "ingredients": [
       {
         "id": "beef",
@@ -756,7 +756,7 @@
     "id": "fish-cabbage-tumis-14",
     "title": "Tumis Fish with Cabbage",
     "description": "A simple and delicious Indonesian-inspired Fish dish cooked in simple stir-fry with fresh Cabbage.",
-    "imageName": "fish",
+    "imageName": "fish-cabbage",
     "ingredients": [
       {
         "id": "fish",
@@ -807,7 +807,7 @@
     "id": "fish-bell-pepper-asam-manis-15",
     "title": "Asam Manis Fish with Bell Pepper",
     "description": "A simple and delicious Indonesian-inspired Fish dish cooked in sweet and sour with fresh Bell Pepper.",
-    "imageName": "fish",
+    "imageName": "fish-pepper",
     "ingredients": [
       {
         "id": "fish",
@@ -858,7 +858,7 @@
     "id": "egg-cucumber-penyet-16",
     "title": "Penyet Egg with Cucumber",
     "description": "A simple and delicious Indonesian-inspired Egg dish cooked in smashed with sambal with fresh Cucumber.",
-    "imageName": "egg",
+    "imageName": "egg-cucumber",
     "ingredients": [
       {
         "id": "egg",
@@ -909,7 +909,7 @@
     "id": "beef-corn-orek-17",
     "title": "Orek Beef with Corn",
     "description": "A simple and delicious Indonesian-inspired Beef dish cooked in sweet soy sauce stir-fry with fresh Corn.",
-    "imageName": "beef",
+    "imageName": "beef-corn",
     "ingredients": [
       {
         "id": "beef",
@@ -960,7 +960,7 @@
     "id": "tempeh-long-bean-goreng-tepung-18",
     "title": "Goreng Tepung Tempeh with Long Bean",
     "description": "A simple and delicious Indonesian-inspired Tempeh dish cooked in crispy flour coating with fresh Long Bean.",
-    "imageName": "tempeh",
+    "imageName": "tempeh-longbean",
     "ingredients": [
       {
         "id": "tempeh",
@@ -1165,6 +1165,8 @@
       "Serve hot with warm rice."
     ]
   },
+  
+//  SAMPESINI WOI
   {
     "id": "eggplant-bell-pepper-goreng-tepung-22",
     "title": "Goreng Tepung Eggplant with Bell Pepper",
