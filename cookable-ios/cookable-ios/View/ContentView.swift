@@ -57,7 +57,7 @@ struct ContentView: View {
                 ) {
                     appState.showHome()
                 }
-                .glassEffect()
+//                .glassEffect()
                 .padding(.bottom, 32)
                 .padding(.horizontal, 24)
                 .frame(maxWidth: UIScreen.main.bounds.width * 1)

@@ -2,7 +2,7 @@
 //  AppRootView.swift
 //  cookable-ios
 //
-//  Created by Safa Auliya Hidayat on 22/06/26.
+//  Created by Safa Auliya on 22/06/26.
 //
 
 import SwiftUI
@@ -19,7 +19,7 @@ struct AppRootView: View {
                     .task {
                         try? await Task.sleep(nanoseconds: 1_500_000_000)
 
-                        withAnimation(.easeInOut(duration: 0.3)) {
+                        withAnimation(.easeInOut(duration: 0.9)) {
                             isShowingSplash = false
                         }
                     }
